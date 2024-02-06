@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+
+.welcome_block{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./media/giphy.gif');
+    background-size: cover;
+    pointer-events: none;
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+}
+
+body {
+    font-family: 'Sixtyfour', sans-serif;
+    color: #fff;
+}
+
+.title{
+    font-size: 64px;
+    text-transform: uppercase;
+}
+
+.text{
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.name {
+    font-weight: 400;
+    padding-top: 30px;
+    color: red;
+}
+
+.info{
+    padding-left: 100px;
+    width: 70vw;
+}
+
+.one-block{
+    display: flex;
+}
+
+.contacts{
+    position: absolute;
+    top: 30vh;
+    right: 2vw;
+}
+
+ul{
+    transition: all 3s ease;
+}
+
+li{
+    list-style-type: none;
+    margin-bottom: 3vh;
+}
+
+li:hover{
+    opacity: 0.8;
+}
+
+a{
+    pointer-events: all;
+}
+
+@keyframes glitch {
+    0% {
+      transform: none;
+    }
+    5% {
+      transform: skewX(-10deg) scaleY(1.1);
+    }
+    10% {
+      transform: none;
+    }
+    15% {
+      transform: skewX(5deg) scaleY(0.9);
+    }
+    20% {
+      transform: none;
+    }
+    80% {
+      transform: none;
+    }
+    85% {
+      transform: skewX(-10deg) scaleY(1.1);
+    }
+    90% {
+      transform: none;
+    }
+    95% {
+      transform: skewX(5deg) scaleY(0.9);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  
+  .info h1,
+  .info h2,
+  .info h3,
+  .info h4,
+  .info p {
+    animation: glitch 10s infinite;
+  }
+
