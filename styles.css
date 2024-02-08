@@ -153,6 +153,31 @@ a{
   height: 100%;
 }
 
+.blog{
+  transition: all 3s ease;
+}
+.blog a{
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.blog a:hover{
+    opacity: 0.8;
+}
+
+.blog__text{
+  margin-right: 30px;
+  
+}
+
 @media (max-width: 1024px) {
     .welcome_block{
       flex-direction: row;
@@ -176,9 +201,6 @@ a{
         font-size: 2.5vw;
     }
 
-    /* .welcome_block{
-      position: static;
-    } */
     .contacts{
       height: 10vh;
       position: absolute;
